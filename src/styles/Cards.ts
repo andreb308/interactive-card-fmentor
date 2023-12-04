@@ -17,6 +17,10 @@ export const CardFront = styled.div`
   background-repeat: no-repeat;
   width: 447px;
   height: 245px;
+
+  @media (max-width: 768px) {
+    position: static;
+  }
 `;
 
 export const CardBack = styled.div`
@@ -27,6 +31,10 @@ export const CardBack = styled.div`
 
   width: 447px;
   height: 245px;
+
+  @media (max-width: 768px) {
+    position: static;
+  }
 `;
 
 export const CardLogo = styled.img`

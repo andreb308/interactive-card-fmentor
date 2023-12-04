@@ -22,6 +22,7 @@ export const FormContainer = styled.div`
   justify-content: center;
   position: relative;
   width: 50%;
+  max-width: 600px;
   height: 100%;
   gap: 1.5rem;
 `;
@@ -57,6 +58,19 @@ export const Input = styled.input`
 
   &::placeholder {
     color: #ccc;
+  }
+
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
   }
 
   /* &:focus {
@@ -105,5 +119,6 @@ export const Button = styled.button`
 
 export const CVCInput = styled(Input)`
   width: calc(100% - 1rem);
+  /* max-width: 200px; */
   margin-left: 1rem;
 `;

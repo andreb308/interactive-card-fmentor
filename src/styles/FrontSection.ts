@@ -8,4 +8,10 @@ export const Container = styled.div`
   height: 75%;
   /* background-color: rgba(100, 100, 100, 0.5); */
   z-index: 1;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
 `;
