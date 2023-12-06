@@ -115,6 +115,10 @@ export const Button = styled.button`
   font-family: "Space Grotesk", sans-serif;
   border: 0;
   border-radius: 0.8rem;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const CVCInput = styled(Input)`
