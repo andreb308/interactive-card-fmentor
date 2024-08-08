@@ -12,22 +12,26 @@ import {
   Label,
 } from "../../../styles/Form";
 
-type CardInfo = {
-  cardName: string;
-  cardNumber: string;
-  expDateMonth: string;
-  expDateYear: string;
-  cvc: string;
-};
+
+// import { useForm } from 'react-hook-form';
+// import { zodResolver } from '@hookform/resolvers/zod';
+// import { z } from 'zod';
+import { useCardInfo } from "../Index";
+
+// Define your Zod schema for form validation
+// const schema = z.object({
+//   cardName: z.string().min(4).max(26),
+//   cardNumber: z.string().length(16),
+//   expDateMonth: z.number().int().gte(1).lte(12),
+//   expDateYear: z.number().int().positive().lte(99),
+//   cvc: z.string().length(3),
+// });
 
 export default function Form() {
-  const [cardInfo, setCardInfo] = useState<CardInfo>({
-    cardName: "",
-    cardNumber: "",
-    expDateMonth: "",
-    expDateYear: "",
-    cvc: "",
-  });
+
+const {cardInfo, setCardInfo} = useCardInfo()
+  
+  
 
   const handleExpMonth = (newMonth: string) => {
     if (!newMonth) setCardInfo({ ...cardInfo, expDateMonth: "" });
@@ -66,9 +70,9 @@ export default function Form() {
     }
   };
 
-  const handleLimitedNumberInput = (input: string, maxLength: number) => {
-    if (input.length > maxLength) input = input.slice(0, maxLength);
-    return input;
+  const handleLimitedNumberInput = (i: string, maxLength: number) => {
+    if (i.length > maxLength) { i = i.slice(0, maxLength) }
+    return i;
   };
 
   const handleCardNumber = (value: string) => {
@@ -116,7 +120,7 @@ export default function Form() {
               type="number"
               value={cardInfo.expDateMonth}
               onChange={(e) => handleExpMonth(e.target.value)}
-              // @ts-ignore
+              // @ts-expect-error
               onWheel={(e) => e.target.blur()}
             ></Input>
             <Input
@@ -124,7 +128,7 @@ export default function Form() {
               type="number"
               value={cardInfo.expDateYear}
               onChange={(e) => handleExpYear(e.target.value)}
-              // @ts-ignore
+              // @ts-expect-error
               onWheel={(e) => e.target.blur()}
             ></Input>
           </FlexRow>
@@ -139,7 +143,7 @@ export default function Form() {
             onChange={(e) => {
               handleCVC(e.target.value);
             }}
-            // @ts-ignore
+            // @ts-expect-error
             onWheel={(e) => e.target.blur()}
           ></CVCInput>
         </CVCContainer>

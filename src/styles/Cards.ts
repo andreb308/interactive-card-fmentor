@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import CardFront_URL from "../assets/bg-card-front.png";
-import CardBack_URL from "../assets/bg-card-back.png";
+import CardFront_PATH from "../assets/bg-card-front.png";
+import CardBack_PATH from "../assets/bg-card-back.png";
 
 export const CardsContainer = styled.div`
   position: relative;
@@ -9,7 +9,7 @@ export const CardsContainer = styled.div`
 `;
 
 export const CardFront = styled.div`
-  background-image: url(${CardFront_URL});
+  background-image: url(${CardFront_PATH});
   position: absolute;
   top: 50px;
   left: 50px;
@@ -24,7 +24,7 @@ export const CardFront = styled.div`
 `;
 
 export const CardBack = styled.div`
-  background-image: url(${CardBack_URL});
+  background-image: url(${CardBack_PATH});
   position: absolute;
   top: 350px;
   left: 120px;
